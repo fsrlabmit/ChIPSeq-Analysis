@@ -13,4 +13,4 @@ You only need to edit the gzip.sh file to add your email address if you want to 
 
 Make sure you are in the correct directory (the main one containing all of the subdirectories for your samples) and submit the gzip.sh with the following command:
 
-'sbatch gzip.sh'
+`sbatch gzip.sh`
