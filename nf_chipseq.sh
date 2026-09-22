@@ -16,7 +16,7 @@ module add singularity/3.10.4
 cd /net/bmc-lab2/data/lab/sanchezrivera/hcevasco/260903San/
 
 # Run nf-core chipseq
-# HELLOOOOOOOOO THINGS HERE NEED TO BE ADJUSTED. I RAN THIS AGAINST THE MOUSE GENOME SO THAT IS WHAT THE FILES IN -- fasta --gtf and --macs_gsize correspond to
+# HELLOOOOOOOOO THINGS HERE NEED TO BE ADJUSTED. I RAN THIS AGAINST THE MOUSE GENOME version m38 SO THAT'S WHAT'S IN THE FILES --fasta --gtf and --macs_gsize correspond to
 # If you're running it against human genome, you need to swap out these files.
 # you can also explore the --genome flag option in nf-core but for reproducibility, it's best to use your own build and keep it consistent
 # gsize here is from the second table here https://deeptools.readthedocs.io/en/develop/content/feature/effectiveGenomeSize.html and is based on a read length of 150 (150 SE)
