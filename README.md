@@ -95,4 +95,5 @@ At this point, you obviously won't have results/heatmaps folders in your directo
 
 <img width="777" height="73" alt="image" src="https://github.com/user-attachments/assets/3fbc6c85-a99a-4d98-919c-ded9011b542b" />
 
-
+*ACTION:* Once you have filled out the sample sheet, made sure you installed the nf-core conda environment, and edited the nf_chipseq.sh file to your appropriate parameters, you are ready to submit! 
+`sbatch nf_chipseq.sh`
