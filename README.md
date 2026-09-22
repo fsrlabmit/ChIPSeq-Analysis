@@ -56,4 +56,11 @@ To run the pipeline, there are a few components you need to set up first. To beg
 An example of what the sheet should look like:
 <img width="889" height="115" alt="image" src="https://github.com/user-attachments/assets/2296fe78-1606-4e02-9a2c-80dbdaeea573" />
 
+You also need to copy the nf-core_chipseq.sh file to your directory and change several parts so they are specific to your pipeline run. I've commented things like "HELLOOOOOOO" where you need to edit.
+```
+# HELLOOOOOOO TODO: Remove one '#' and change the email address below to your own
+## SBATCH --mail-user=YOUR_USERNAME@mit.edu
+```
+
+
 
