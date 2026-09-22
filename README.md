@@ -11,11 +11,11 @@ Now in your personal directory on the server, you should have a directory/folder
 
 <img width="580" height="381" alt="image" src="https://github.com/user-attachments/assets/18769405-2b7a-400e-aa28-0ba08453e998" />
 
-Each sample has a forward R1 and reverse R2 read if you did PE sequencing (which is most common). In order to run our analysis in nf-core, we need to take only the .fastq files from each of the sample directories, compress them, compile them into a dedicated directory with just the compressed files, and make a .txt file that lists all of the gzipped files. The gzip.sh script will do all of this for you. To use it, copy the gzip.sh file to your working directory (the main 260904_San equivalent). The script is going to read through all of the other directories and compress any .fastq files to a new fastqs_only directory while leaving the original .fastq files untouched in their original folder. 
+Each sample has a forward R1 and reverse R2 read if you did PE sequencing (which is most common). In order to run our analysis in nf-core, we need to take only the .fastq files from each of the sample directories, compress them, compile them into a dedicated directory with just the compressed files, and make a .txt file that lists all of the gzipped files. The gzip.sh script will do all of this for you. 
 
-You only need to edit the [gzip.sh file](gzip.sh) to add your email address if you want to be notified when the run finishes. 
+ACTION: Copy the [gzip.sh file](gzip.sh) to your working directory (the main 260904_San equivalent). The script is going to read through all of the other directories and compress any .fastq files to a new fastqs_only directory while leaving the original .fastq files untouched in their original folder. You only need to edit the gzip.sh file to add your email address if you want to be notified when the run finishes. 
 
-Make sure you are in the correct directory (the main one containing all of the subdirectories for your samples) and submit the gzip.sh with the following command:
+ACTION: Make sure you are in the correct directory (the main one containing all of the subdirectories for your samples) and submit the gzip.sh with the following command:
 
 `sbatch gzip.sh`
 
@@ -25,7 +25,7 @@ This will take a bit to run but you should see parallel processes start to run o
 
 **Step 2: Install nf-core conda environment** Once you have your fastqs_only folder now with all the gzipped files in them, we can run the nf-core chip seq pipeline. 
 
-First, you will need to make a nf-core conda environment using the instructions provided here by the core: https://igb.mit.edu/mini-courses/advanced-utilization-of-igb-computational-resources/running-nextflow-nf-core-pipelines#installing-nf-core-nextflow 
+First, you will need to make a nf-core conda environment using the instructions provided here by the core: [KI Luria Installing nf-core / Nextflow](https://igb.mit.edu/mini-courses/advanced-utilization-of-igb-computational-resources/running-nextflow-nf-core-pipelines#installing-nf-core-nextflow )
 
 Nextflow and nf-core are installed through Conda, so we'll want to make sure we activate the Conda module before starting:
 
