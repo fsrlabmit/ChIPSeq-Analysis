@@ -13,7 +13,7 @@ Now in your personal directory on the server, you should have a directory/folder
 
 Each sample has a forward R1 and reverse R2 read if you did PE sequencing (which is most common). In order to run our analysis in nf-core, we need to take only the .fastq files from each of the sample directories, compress them, compile them into a dedicated directory with just the compressed files, and make a .txt file that lists all of the gzipped files. The gzip.sh script will do all of this for you. To use it, copy the gzip.sh file to your working directory (the main 260904_San equivalent). The script is going to read through all of the other directories and compress any .fastq files to a new fastqs_only directory while leaving the original .fastq files untouched in their original folder. 
 
-You only need to edit the gzip.sh file to add your email address if you want to be notified when the run finishes. 
+You only need to edit the [gzip.sh file](gzip.sh) to add your email address if you want to be notified when the run finishes. 
 
 Make sure you are in the correct directory (the main one containing all of the subdirectories for your samples) and submit the gzip.sh with the following command:
 
