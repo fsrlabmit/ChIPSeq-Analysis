@@ -5,7 +5,8 @@
 Copy your sequencing run files to your personal directory using the instructions provided in the email from the core. It's best to copy them to a directory with the project name for easy traceability (ie 260904_San/). 
 
 **Step 1: Compress all of the .fastq files into a separate directory for easy access** 
-\Now in your personal directory on the server, you should have a directory/folder named after your sequencing run that contains subdirectories for each of your samples. 
+\
+Now in your personal directory on the server, you should have a directory/folder named after your sequencing run that contains subdirectories for each of your samples. 
 
 <img width="580" height="381" alt="image" src="https://github.com/user-attachments/assets/18769405-2b7a-400e-aa28-0ba08453e998" />
 
