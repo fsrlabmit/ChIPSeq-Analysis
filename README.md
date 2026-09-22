@@ -54,14 +54,14 @@ conda activate nf-core
 conda install python=3.12 nf-core=2.13.1 nextflow=24.10.4
 ```
 
-**Step 3: Prepare nf-core_chipseq.sh pipeline**
+**Step 3: Prepare nf_chipseq.sh pipeline**
 \
 To run the pipeline, there are a few components you need to set up first. To begin, download the [samplesheet.csv](samplesheet.csv) and replace the file paths and names with those of your samples. Also change which antibodies are used and which input controls each sample should be analyzed against. If you have a lot of samples, there's probably a way to upload a screenshot of your fastqs_only folder and have AI fill this out for you. 
 \
 An example of what the sheet should look like:
 <img width="889" height="115" alt="image" src="https://github.com/user-attachments/assets/2296fe78-1606-4e02-9a2c-80dbdaeea573" />
 
-You also need to copy the [nf-core_chipseq.sh](nf-core_chipseq.sh) file to your directory and change several parts so they are specific to your pipeline run. I've commented things like "HELLOOOOOOO" where you need to edit.
+You also need to copy the [nf_chipseq.sh](nf_chipseq.sh) file to your directory and change several parts so they are specific to your pipeline run. I've commented things like "HELLOOOOOOO" where you need to edit.
 ```
 # HELLOOOOOOO TODO: Remove one '#' and change the email address below to your own
 ## SBATCH --mail-user=YOUR_USERNAME@mit.edu
