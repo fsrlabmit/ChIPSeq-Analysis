@@ -13,9 +13,11 @@ Now in your personal directory on the server, you should have a directory/folder
 
 Each sample has a forward R1 and reverse R2 read if you did PE sequencing (which is most common). In order to run our analysis in nf-core, we need to take only the .fastq files from each of the sample directories, compress them, compile them into a dedicated directory with just the compressed files, and make a .txt file that lists all of the gzipped files. The gzip.sh script will do all of this for you. 
 
-ACTION: Copy the [gzip.sh file](gzip.sh) to your working directory (the main 260904_San equivalent). The script is going to read through all of the other directories and compress any .fastq files to a new fastqs_only directory while leaving the original .fastq files untouched in their original folder. You only need to edit the gzip.sh file to add your email address if you want to be notified when the run finishes. 
+\
+*ACTION:* Copy the [gzip.sh file](gzip.sh) to your working directory (the main 260904_San equivalent). The script is going to read through all of the other directories and compress any .fastq files to a new fastqs_only directory while leaving the original .fastq files untouched in their original folder. You only need to edit the gzip.sh file to add your email address if you want to be notified when the run finishes. 
 
-ACTION: Make sure you are in the correct directory (the main one containing all of the subdirectories for your samples) and submit the gzip.sh with the following command:
+\
+*ACTION:* Make sure you are in the correct directory (the main one containing all of the subdirectories for your samples) and submit the gzip.sh with the following command:
 
 `sbatch gzip.sh`
 
@@ -23,10 +25,13 @@ This will take a bit to run but you should see parallel processes start to run o
 
 `squeue -u` followed by your kerb
 
-**Step 2: Install nf-core conda environment** Once you have your fastqs_only folder now with all the gzipped files in them, we can run the nf-core chip seq pipeline. 
+**Step 2: Install nf-core conda environment** \
+Once you have your fastqs_only folder now with all the gzipped files in them, we can run the nf-core chip seq pipeline. 
 
+\
 First, you will need to make a nf-core conda environment using the instructions provided here by the core: [KI Luria Installing nf-core / Nextflow](https://igb.mit.edu/mini-courses/advanced-utilization-of-igb-computational-resources/running-nextflow-nf-core-pipelines#installing-nf-core-nextflow )
 
+\
 Nextflow and nf-core are installed through Conda, so we'll want to make sure we activate the Conda module before starting:
 
 ```
@@ -51,12 +56,12 @@ conda install python=3.12 nf-core=2.13.1 nextflow=24.10.4
 
 **Step 3: Prepare nf-core_chipseq.sh pipeline**
 \
-To run the pipeline, there are a few components you need to set up first. To begin, download the samplesheet.csv and replace the file paths and names with those of your samples. Also change which antibodies are used and which input controls each sample should be analyzed against. If you have a lot of samples, there's probably a way to upload a screenshot of your fastqs_only folder and have AI fill this out for you. 
+To run the pipeline, there are a few components you need to set up first. To begin, download the [samplesheet.csv](samplesheet.csv) and replace the file paths and names with those of your samples. Also change which antibodies are used and which input controls each sample should be analyzed against. If you have a lot of samples, there's probably a way to upload a screenshot of your fastqs_only folder and have AI fill this out for you. 
 \
 An example of what the sheet should look like:
 <img width="889" height="115" alt="image" src="https://github.com/user-attachments/assets/2296fe78-1606-4e02-9a2c-80dbdaeea573" />
 
-You also need to copy the nf-core_chipseq.sh file to your directory and change several parts so they are specific to your pipeline run. I've commented things like "HELLOOOOOOO" where you need to edit.
+You also need to copy the [nf-core_chipseq.sh](nf-core_chipseq.sh) file to your directory and change several parts so they are specific to your pipeline run. I've commented things like "HELLOOOOOOO" where you need to edit.
 ```
 # HELLOOOOOOO TODO: Remove one '#' and change the email address below to your own
 ## SBATCH --mail-user=YOUR_USERNAME@mit.edu
@@ -86,5 +91,8 @@ nextflow run nf-core/chipseq -r 2.1.0 -profile singularity,ki_luria \
 
 Note that you need to edit your email address, the path to the working directory, and change many of the file paths in the actual nextflow command list. See the commend about using the correct genome for your samples. Reference genomes that we have used in the lab are in the ref_genomes folder in this repository. 
 
+At this point, you obviously won't have results/heatmaps folders in your directory but at a minimum you should see all of your sequencing directories, the fastqs_only directory, your samplesheet.csv, the nf_chipseq.sh script, and the gzip.sh script. 
+
+<img width="777" height="73" alt="image" src="https://github.com/user-attachments/assets/3fbc6c85-a99a-4d98-919c-ded9011b542b" />
 
 
