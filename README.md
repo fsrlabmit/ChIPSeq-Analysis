@@ -2,6 +2,7 @@
 
 
 **Step 0: Copy your sequencing data to your personal folder** 
+\
 Copy your sequencing run files to your personal directory using the instructions provided in the email from the core. It's best to copy them to a directory with the project name for easy traceability (ie 260904_San/). 
 
 **Step 1: Compress all of the .fastq files into a separate directory for easy access** 
@@ -49,5 +50,10 @@ conda install python=3.12 nf-core=2.13.1 nextflow=24.10.4
 ```
 
 **Step 3: Prepare nf-core_chipseq.sh pipeline**
-To run the pipeline, there are a few components you need to set up first. 
+\
+To run the pipeline, there are a few components you need to set up first. To begin, download the samplesheet.csv and replace the file paths and names with those of your samples. Also change which antibodies are used and which input controls each sample should be analyzed against. If you have a lot of samples, there's probably a way to upload a screenshot of your fastqs_only folder and have AI fill this out for you. 
+\
+An example of what the sheet should look like:
+<img width="889" height="115" alt="image" src="https://github.com/user-attachments/assets/2296fe78-1606-4e02-9a2c-80dbdaeea573" />
+
 
