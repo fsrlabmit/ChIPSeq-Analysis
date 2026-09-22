@@ -62,5 +62,29 @@ You also need to copy the nf-core_chipseq.sh file to your directory and change s
 ## SBATCH --mail-user=YOUR_USERNAME@mit.edu
 ```
 
+```# Go to working directory
+#####HELLLOOOOOOOOO CHANGE THIS!!!!
+cd /net/bmc-lab2/data/lab/sanchezrivera/hcevasco/260903San/
+
+# Run nf-core chipseq
+# HELLOOOOOOOOO THINGS HERE NEED TO BE ADJUSTED. I RAN THIS AGAINST THE MOUSE GENOME SO THAT IS WHAT THE FILES IN -- fasta --gtf and --macs_gsize correspond to
+# If you're running it against human genome, you need to swap out these files.
+# you can also explore the --genome flag option in nf-core but for reproducibility, it's best to use your own build and keep it consistent
+# gsize here is from the second table here https://deeptools.readthedocs.io/en/develop/content/feature/effectiveGenomeSize.html and is based on a read length of 150 (150 SE)
+
+nextflow run nf-core/chipseq -r 2.1.0 -profile singularity,ki_luria \
+--input samplesheet.csv \
+--fasta /net/bmc-lab2/data/lab/sanchezrivera/hcevasco/ref_genomes/GRCm38.primary_assembly.genome.fa.gz \
+--gtf /net/bmc-lab2/data/lab/sanchezrivera/hcevasco/ref_genomes/gencode.vM25.primary_assembly.annotation.gtf.gz \
+--save_reference \
+--macs_gsize 2410055689 \
+--blacklist /net/bmc-lab2/data/lab/sanchezrivera/hcevasco/ref_genomes/mm10-blacklist.v2.bed \
+--narrow_peak \
+--outdir ./chipseq_results_narrow_peak
+-resume
+```
+
+Note that you need to edit your email address, the path to the working directory, and change many of the file paths in the actual nextflow command list. See the commend about using the correct genome for your samples. Reference genomes that we have used in the lab are in the ref_genomes folder in this repository. 
+
 
 
